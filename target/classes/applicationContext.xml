@@ -7,9 +7,13 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="testBean"
-          class="ru.yanikarp.springcourse.TestBean">
-        <constructor-arg value="yanikarp"/>
+    <bean id="musicBean"
+          class="ru.yanikarp.springcourse.RockMusic">
+    </bean>
+
+    <bean id="musicPlayer"
+        class="ru.yanikarp.springcourse.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
     </bean>
 
 </beans>

@@ -23,10 +23,10 @@ public class TestSpring {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
           "applicationContext.xml"
         );
-
         MusicPlayer mp = context.getBean("musicPlayer", MusicPlayer.class);
 
-        mp.playMusic();
+        mp.playMusicList();
 
+        //mp.playMusic();
     }
 }

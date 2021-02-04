@@ -12,15 +12,17 @@
     <bean id="musicBeanRock"
           class="ru.yanikarp.springcourse.RockMusic">
     </bean>
+
     <bean id="musicBeanClassic"
           class="ru.yanikarp.springcourse.ClassicalMusic">
     </bean>
+
     <bean id="musicBeanRap"
           class="ru.yanikarp.springcourse.RapMusic">
     </bean>
 
     <bean id="musicPlayer"
-        class="ru.yanikarp.springcourse.MusicPlayer">
+        class="ru.yanikarp.springcourse.MusicPlayer" scope="prototype">
         <property name="musicList">
             <list value-type="ru.yanikarp.springcourse.Music">
                 <ref bean="musicBeanRap" />

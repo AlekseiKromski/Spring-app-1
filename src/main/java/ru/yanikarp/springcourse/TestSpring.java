@@ -5,13 +5,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestSpring {
 
     public static void main(String[] args) {
+        //Create spring application context
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+                "applicationContext.xml"
+        );
         //1
-//
-//        //Create spring application context
-//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-//          "applicationContext.xml"
-//        );
-//
+
 //        //Get bean of spring application context
 //        TestBean testBean = context.getBean("testBean", TestBean.class);
 //
@@ -20,6 +19,7 @@ public class TestSpring {
 //        context.close();
 
         //2
+        /*
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
           "applicationContext.xml"
         );
@@ -33,5 +33,20 @@ public class TestSpring {
 
         //mp1.playMusic();
         //mp2.playMusic();
+        */
+        //3
+
+        /*
+        * Если у бина стоит scope - prototype, то он не вызывает destroy method в отличии от singletone
+        * Даже, если мы используем фабричный метод, при scope - singletone, то паттерн будет использован, т.е паттерн исполняется во всем своем виде
+        * */
+
+        ClassicalMusic classicalMusic = context.getBean("musicBeanClassic", ClassicalMusic.class);
+        classicalMusic.getSong( );
+        context.close();
+
+
+
+
     }
 }

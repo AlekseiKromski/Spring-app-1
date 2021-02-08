@@ -14,7 +14,12 @@
     </bean>
 
     <bean id="musicBeanClassic"
-          class="ru.yanikarp.springcourse.ClassicalMusic">
+          class="ru.yanikarp.springcourse.ClassicalMusic"
+          init-method="_init_"
+          destroy-method="_destory_"
+          factory-method="getClassicalMusic"
+    >
+
     </bean>
 
     <bean id="musicBeanRap"
